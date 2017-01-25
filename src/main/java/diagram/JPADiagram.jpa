@@ -31,7 +31,9 @@
         <jpa:attributes>
             <basic attribute-type="String" visibile="true" name="name" id="_148535401989817"/>
             <basic attribute-type="String" visibile="true" name="type" id="_148535402232218"/>
-            <jpa:id attribute-type="Long" visibile="true" name="id" id="_148535398101515"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_148535398101515">
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
         </jpa:attributes>
     </jpa:entity>
     <jpa:entity xre="false" sm="false" abs="false" class="Department" visibile="true" minimized="false" rootElement="_14853530987301" id="_1485354266844">
@@ -51,7 +53,7 @@
     <jpa:diagram>
         <plane elementRef="_14853530987301">
             <shape elementRef="_1485353111333">
-                <Bounds x="283.0" y="389.0" width="151.0" height="92.0"/>
+                <Bounds x="283.0" y="372.0" width="151.0" height="92.0"/>
             </shape>
             <shape elementRef="_1485353141340">
                 <Bounds x="459.0" y="221.0" width="152.0" height="113.0"/>
