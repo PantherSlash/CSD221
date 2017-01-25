@@ -5,37 +5,49 @@
  */
 package JPATester;
 
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import JPATestTables.Address;
+import JPATestTables.Customer;
+import JPATestTables.Employee;
+
+
 /**
  *
- * @author 15022392
+ * @author Kodi Kahtava
  */
 public class JPATester {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        EntityManagerFactory emf = null;
-        EntityManager em = null;
+        EntityManagerFactory emf=null;
+        EntityManager em=null;
+        
         try{
-            emf = Persistence.createEntityManagerFactory("DEFAULT_PU");
-            em = emf.createEntityManager();
-            System.out.println("EntityManager Created : " + emf);
-        } catch (Exception ex) {
-            Logger.getLogger(JPATester.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            if (em != null) {
-                em.close();
-            }
-            if (emf != null) {
+            emf=Persistence.createEntityManagerFactory("JPATesterPU");
+            em=emf.createEntityManager();
+            Logger.getLogger(JPATester.class.getName()).log(Level.INFO, "Entity Manager created" + emf);
+            em.getTransaction().begin();
+            Customer k = new Customer();
+            k.setName("Kodi Kahtava");
+            k.setAge(19);
+            k.setAddress(new Address());
+            k.getAddress().setCity("Echo Bay");
+            k.getAddress().setStreet("100 Elizabeth");
+            k.getAddress().setState("Ontario");
+            em.persist(k);
+            em.getTransaction().commit();
+            
+        }catch(Exception e){
+            Logger.getLogger(JPATester.class.getName()).log(Level.SEVERE, null, e);
+        }finally{
+            if(emf!=null)
                 emf.close();
-            }
+  //         if(em!=null)
+    //            em.close();
         }
     }
-    
+
 }
