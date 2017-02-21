@@ -16,6 +16,7 @@ import JPATestTables.Customer;
 import JPATestTables.Employee;
 import JPATestTables.Department;
 import JPATestTables.ProductOrder;
+import java.util.List;
 /**
  *
  * @author Kodi Kahtava
@@ -51,6 +52,11 @@ public class JPATester {
             em.persist(b);
             em.getTransaction().commit();
             
+            List<Customer> ListOfCustomers = em.createQuery("SELECT c FROM Customer c").getResultList();
+            System.out.println("List of Customers");
+            for(Customer customer:ListOfCustomers){
+                System.out.println(customer.getName());
+            }
             
         }catch(Exception e){
             Logger.getLogger(JPATester.class.getName()).log(Level.SEVERE, null, e);
