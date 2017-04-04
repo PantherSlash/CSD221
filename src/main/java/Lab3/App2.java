@@ -25,30 +25,26 @@ public class App2 {
     public void run(){
         while (loop == true){
         System.out.println("------Books------");
-        if (! books.isEmpty()) {
-            for (int i = 0; i < books.size(); i++) {
-                System.out.print(i + 1 + ". ");
-                System.out.println(books.get(i).getTitle());
-            }
+        {
           
         }
         System.out.println("-----------------");
-          System.out.println("3. Add a book");
-          System.out.println("4. Edit a book");
-          System.out.println("5. Delete a book");
-          System.out.println("6. Quit");
+          System.out.println("1. Add a book");
+          System.out.println("2. Edit a book");
+          System.out.println("3. Delete a book");
+          System.out.println("99. Quit");
         int choice = input.nextInt();
-            switch (choice) {
-                case 3:
+            switch (choice) { 
+                case 1:
                     addBook();
                     break;
-                case 4:
+                case 2:
                     editBook();
                     break;
-                case 5:
+                case 3:
                     deleteBook();
                     break;
-                case 6:
+                case 4:
                     loop = false;
                     break;
                 default:

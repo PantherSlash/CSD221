@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Lab3;
+package Lab4;
+
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -32,10 +33,6 @@ public class Magazine extends Publication{
         this.currIssue = currIssue;
     }
    
-    public void Magazine(){
-        
-    }
-    
     public Magazine(String title, float price, int copies, int orderQTY, Date currIssue){
         super(title, price, copies);
         this.orderQTY = orderQTY;
