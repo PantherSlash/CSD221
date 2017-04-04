@@ -5,6 +5,8 @@
  */
 package Lab4;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -38,7 +40,16 @@ public class App {
     
     public void bookMenu(){
         boolean go = true;
-        
+        List<Book> b = new ArrayList<Book>();
+        while (go == true){
+        System.out.println("------Books------");
+        System.out.println("1. View Books");
+        System.out.println("2. Add Books");
+        System.out.println("3. Edit Books");
+        System.out.println("4. Delete Books");
+        System.out.println("5. Sell Books");
+        System.out.println("6. Quit");
+        }
     }
     
     public void ticketMenu(){
@@ -51,13 +62,24 @@ public class App {
         int choice = input.nextInt();
         switch (choice){
             case 1:
-                System.out.println(t.sellCopy());
+                t.sellCopy();
+                System.out.println(t.toString());
             case 2: go = false;
         }
         }
     }
     
     public void magazineMenu(){
-        
+        boolean go = true;
+        List<Magazine> m = new ArrayList<Magazine>();
+        while (go == true){
+        System.out.println("------Books------");
+        System.out.println("1. View Magazines");
+        System.out.println("2. Add Magazines");
+        System.out.println("3. Edit Magazines");
+        System.out.println("4. Delete Magazines");
+        System.out.println("5. Sell Magazines");
+        System.out.println("6. Quit");
     }
+}
 }

@@ -19,7 +19,6 @@ public class Book extends Publication{
     public void setAuthor(String author) {
         this.author = author;
     }
-
     
     public Book(String author, int copies , String title, float price){
         super(title, price, copies);
@@ -33,6 +32,16 @@ public class Book extends Publication{
     public String toString() {
         return super.toString() + 
                 "\nAuthor:" + author + "\n";
+    }
+
+    @Override
+    public void sellCopy() {
+        setCopies(getCopies()-1);
+    }
+
+    @Override
+    public double getPrice() {
+        return price;
     }
     
 }

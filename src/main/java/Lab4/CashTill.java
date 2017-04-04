@@ -16,12 +16,12 @@ public class CashTill {
     {
         runningTotal = 0;
     }
-    public void sellItem (Publication pPub)
+    public void sellItem (SaleableItem sItem)
     {
-        runningTotal = runningTotal + pPub.getPrice();
-        pPub.sellCopy();
-        System.out.println("Sold " + pPub + " @ " +
-                pPub.getPrice()  + "\nSubtotal = " +
+        runningTotal = runningTotal + sItem.getPrice();
+        sItem.sellCopy();
+        System.out.println("Sold " + sItem + " @ " +
+                sItem.getPrice()  + "\nSubtotal = " +
                 runningTotal);
     }
     public void showTotal()

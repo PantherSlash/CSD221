@@ -25,13 +25,10 @@ public class App2 {
     public void run(){
         while (loop == true){
         System.out.println("------Books------");
-        {
-          
-        }
-        System.out.println("-----------------");
           System.out.println("1. Add a book");
           System.out.println("2. Edit a book");
           System.out.println("3. Delete a book");
+          System.out.println("4. View a book");
           System.out.println("99. Quit");
         int choice = input.nextInt();
             switch (choice) { 
@@ -45,6 +42,8 @@ public class App2 {
                     deleteBook();
                     break;
                 case 4:
+                    break;
+                case 99:
                     loop = false;
                     break;
                 default:

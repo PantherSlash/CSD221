@@ -9,11 +9,20 @@ package Lab4;
  *
  * @author 15022392
  */
-public class Ticket {
+public class Ticket implements SaleableItem{
     private String description = "Carnival Ticket";
     private double price = 15.00;
     private String person = "You!";
+    private int sold;
 
+    public int getSold() {
+        return sold;
+    }
+
+    public void setSold(int sold) {
+        this.sold = sold;
+    }
+    
     public void setDescription(String description) {
         this.description = description;
     }
@@ -25,21 +34,23 @@ public class Ticket {
     public void setPerson(String person) {
         this.person = person;
     }
-    
+    @Override
     public double getPrice() {
         return price;
     }
-
-    public String sellCopy(){
-        return "*********************" +
-                "\n****TICKET VOUCHER***" +
-                toString() +
-                "\n*********************";
-    }
     @Override
     public String toString(){
-        return "\nDescription: " + description +
+        return "*********************" +
+                "\n****TICKET VOUCHER***" +
+                "\nDescription: " + description +
                 "\nPrice: " + price +
-                "\nPerson: " + person;
+                "\nPerson: " + person +
+                "\n*********************"
+                + "\n\nTickets Sold: " + getSold();
+    }
+
+    @Override
+    public void sellCopy() {
+        setSold(getSold() + 1);
     }
 }

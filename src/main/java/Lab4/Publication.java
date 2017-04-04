@@ -22,11 +22,7 @@ public abstract class Publication implements SaleableItem{
         this.title = title;
     }
     
-    @Override
-    public double getPrice() {
-        return price;
-    }
-
+    
     public void setPrice(float price) {
         this.price = price;
     }
@@ -45,15 +41,11 @@ public abstract class Publication implements SaleableItem{
     }
     
    
-    public void sellCopy(){
-       
-    }
-
+   
     @Override
     public String toString() {
         return "Title: " + title + 
                 "\nPrice: " + price + 
                 "\nCopies: " + copies + "\n";
     }
-    
 }
