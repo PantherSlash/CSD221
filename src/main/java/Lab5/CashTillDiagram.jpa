@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="Lab5.Entities" v="1.5.4" persistenceUnitName="Kodi_Lab5" xs="false" id="_14908025432771" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity xre="false" sm="false" abs="true" class="Publication" visibile="true" minimized="false" rootElement="_14908025432771" id="_1490802662690">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="Title" id="_149080267460611"/>
+            <basic attribute-type="String" visibile="true" name="Price" id="_149080289378215"/>
+            <basic attribute-type="String" visibile="true" name="Copies" id="_149080289520016"/>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Book" visibile="true" minimized="false" rootElement="_14908025432771" id="_1490802665323">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="Author" id="_149080272891812"/>
+            <one-to-one own="true" optional="true" primaryKey="false" connected-entity-id="_1490802662690" visibile="true" name="publication" id="_149080293884318"/>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Magazine" visibile="true" minimized="false" rootElement="_14908025432771" id="_1490802666739">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="OrderQTY" id="_149080282303013"/>
+            <basic attribute-type="String" visibile="true" name="currIssue" id="_149080282463814"/>
+            <one-to-one own="true" optional="true" primaryKey="false" connected-entity-id="_1490802662690" visibile="true" name="publication" id="_149080295043119"/>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:diagram>
+        <plane elementRef="_14908025432771">
+            <shape elementRef="_1490802662690">
+                <Bounds x="480.0" y="93.0" width="159.0" height="100.0"/>
+            </shape>
+            <shape elementRef="_1490802665323">
+                <Bounds x="304.0" y="150.0" width="128.0" height="92.0"/>
+            </shape>
+            <shape elementRef="_1490802666739">
+                <Bounds x="689.0" y="129.0" width="150.0" height="113.0"/>
+            </shape>
+        </plane>
+    </jpa:diagram>
+</jpa:entity-mappings>
