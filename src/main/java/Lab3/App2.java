@@ -28,7 +28,7 @@ public class App2 {
           System.out.println("1. Add a book");
           System.out.println("2. Edit a book");
           System.out.println("3. Delete a book");
-          System.out.println("4. View a book");
+          System.out.println("4. View books");
           System.out.println("99. Quit");
         int choice = input.nextInt();
             switch (choice) { 
