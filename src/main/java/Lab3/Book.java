@@ -32,7 +32,7 @@ public class Book extends Publication{
     @Override
     public String toString() {
         return super.toString() + 
-                "\nAuthor:" + author + "\n";
+                "Author:" + author + "\n";
     }
     
 }
