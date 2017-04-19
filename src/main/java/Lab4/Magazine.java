@@ -33,7 +33,7 @@ public class Magazine extends Publication {
         this.currIssue = currIssue;
     }
 
-    public Magazine(String title, float price, int copies, int orderQTY, Date currIssue) {
+    public Magazine(String title, double price, int copies, int orderQTY, Date currIssue) {
         super(title, price, copies);
         this.orderQTY = orderQTY;
         this.currIssue = currIssue;
@@ -53,7 +53,7 @@ public class Magazine extends Publication {
     @Override
     public String toString() {
         return super.toString()
-                + "\nOrder QTY: " + orderQTY
+                + "Order QTY: " + orderQTY
                 + "\nCurrent Issue:" + date.format(currIssue) + "\n";
     }
 

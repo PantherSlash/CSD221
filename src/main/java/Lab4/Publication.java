@@ -23,7 +23,7 @@ public abstract class Publication implements SaleableItem{
     }
     
     
-    public void setPrice(float price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -34,7 +34,7 @@ public abstract class Publication implements SaleableItem{
     public void setCopies(int copies) {
         this.copies = copies;
     }
-    public Publication(String title, float price, int copies){
+    public Publication(String title, double price, int copies){
         this.title = title;
         this.price = price;
         this.copies = copies;
