@@ -1,35 +1,73 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="Lab5.Entities" v="1.5.4" persistenceUnitName="Kodi_Lab5" xs="false" id="_14908025432771" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
-    <jpa:entity xre="false" sm="false" abs="true" class="Publication" visibile="true" minimized="false" rootElement="_14908025432771" id="_1490802662690">
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="lab5.entities" v="1.5.4" persistenceUnitName="fred_lab5_PU" sm="false" xs="false" id="_14908026016891" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity lbl-ref="_14908026069062" xre="false" compositePrimaryKeyClass="PublicationPK" abs="false" class="Publication" visibile="true" pkg="Copies" minimized="false" rootElement="_14908026016891" id="_1490802606878">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
         <jpa:attributes>
-            <basic attribute-type="String" visibile="true" name="Title" id="_149080267460611"/>
-            <basic attribute-type="String" visibile="true" name="Price" id="_149080289378215"/>
-            <basic attribute-type="String" visibile="true" name="Copies" id="_149080289520016"/>
+            <jpa:basic attribute-type="String" visibile="true" name="Title" id="_14908026196184">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="double" visibile="true" name="Price" id="_149300674133477">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="int" visibile="true" name="Copies" id="_149300680098878">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_14908026069062">
+                <jpa:bv/>
+                <jpa:generated-value strategy="IDENTITY"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Publication.findByPrice">
+            <jpa:query>Select p from Publication p where p.Price=:Price</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Publication.findByCopies">
+            <jpa:query>Select p from Publication p where p.Copies=:Copies</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="BookPK" abs="false" class="Book" superclassId="_1490802606878" visibile="true" minimized="false" rootElement="_14908026016891" id="_1490802631134">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" visibile="true" name="Author" id="_14908026502529">
+                <jpa:bv/>
+            </jpa:basic>
         </jpa:attributes>
     </jpa:entity>
-    <jpa:entity xre="false" sm="false" abs="false" class="Book" visibile="true" minimized="false" rootElement="_14908025432771" id="_1490802665323">
+    <jpa:entity lbl-ref="_14908026069062" xre="false" compositePrimaryKeyClass="MagazinePK" abs="false" class="Magazine" superclassId="_1490802606878" visibile="true" minimized="false" rootElement="_14908026016891" id="_1490802637834">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
         <jpa:attributes>
-            <basic attribute-type="String" visibile="true" name="Author" id="_149080272891812"/>
-            <one-to-one own="true" optional="true" primaryKey="false" connected-entity-id="_1490802662690" visibile="true" name="publication" id="_149080293884318"/>
+            <jpa:basic attribute-type="int" visibile="true" name="orderQTY" id="_149080266315710">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.sql.Date" visibile="true" name="currIssue" id="_149300686342380">
+                <jpa:bv/>
+            </jpa:basic>
         </jpa:attributes>
+        <jpa:nq e="false" name="Magazine.findByCurrIssue">
+            <jpa:query>Select m from Magazine m where m.currIssue=:currIssue</jpa:query>
+        </jpa:nq>
     </jpa:entity>
-    <jpa:entity xre="false" sm="false" abs="false" class="Magazine" visibile="true" minimized="false" rootElement="_14908025432771" id="_1490802666739">
-        <jpa:attributes>
-            <basic attribute-type="String" visibile="true" name="OrderQTY" id="_149080282303013"/>
-            <basic attribute-type="String" visibile="true" name="currIssue" id="_149080282463814"/>
-            <one-to-one own="true" optional="true" primaryKey="false" connected-entity-id="_1490802662690" visibile="true" name="publication" id="_149080295043119"/>
-        </jpa:attributes>
-    </jpa:entity>
+    <jpa:c>
+        <ct>java.util.List</ct>
+        <ct>java.util.Set</ct>
+        <ct>java.util.Map</ct>
+        <ct>java.util.Collection</ct>
+    </jpa:c>
     <jpa:diagram>
-        <plane elementRef="_14908025432771">
-            <shape elementRef="_1490802662690">
-                <Bounds x="480.0" y="93.0" width="159.0" height="100.0"/>
+        <plane elementRef="_14908026016891">
+            <shape elementRef="_1490802606878">
+                <Bounds x="252.0" y="60.0" width="159.0" height="134.0"/>
             </shape>
-            <shape elementRef="_1490802665323">
-                <Bounds x="304.0" y="150.0" width="128.0" height="92.0"/>
+            <shape elementRef="_1490802631134">
+                <Bounds x="124.0" y="267.0" width="128.0" height="58.0"/>
             </shape>
-            <shape elementRef="_1490802666739">
-                <Bounds x="689.0" y="129.0" width="150.0" height="113.0"/>
+            <shape elementRef="_1490802637834">
+                <Bounds x="411.0" y="267.0" width="150.0" height="79.0"/>
             </shape>
         </plane>
     </jpa:diagram>

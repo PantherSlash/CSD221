@@ -1,6 +1,5 @@
-package Lab5.Entities;
+package lab5.entities.Copies;
 
-import Lab5.Entities.Copies.*;
 import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
